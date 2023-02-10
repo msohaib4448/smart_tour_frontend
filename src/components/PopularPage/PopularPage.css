@@ -1,0 +1,118 @@
+.PopularPage {
+    background-image: url('../assets/background.jpg');
+    background-repeat: no-repeat;
+    height: 80vh;
+    background-size: cover;
+}
+
+/* .Main-class {
+    position: absolute;
+    width: 1200px;
+    height: 180.48px;
+    left: 210px;
+    top: 250px;
+    background: #FFFFFF;
+    box-shadow: 5px 20px 5px rgba(0, 0, 0, 0.82);
+    border-radius: 20px;
+} */
+
+.Sub-Div {
+    position: absolute;
+    width: 400px;
+    height: 150px;
+    left: 650px;
+    top: 300px; 
+    background: #FFFFFF;
+    box-shadow: 5px 2px 20px #000000;
+    border-radius: 20px;
+    text-align: center;
+    
+    
+}
+.iconBox{
+  
+    width: 58.60px;
+    height:58.60px;
+   margin-top: 20px;
+   
+  
+    
+}
+.iconBox2{
+   
+    width: 58.60px;
+    height:58.60px;
+   position: relative;
+   left: 200px;
+   top: -25px;
+    
+}
+/* .sub-rec1{
+    box-sizing: border-box;
+
+    position: absolute;
+    width: 322.64px;
+    height: 89.36px;
+    left: 30px;
+    top: 50px;
+    
+    border: 1px solid #F4003B;
+    border-radius: 10px;
+}
+.sub-rec2{
+    box-sizing: border-box;
+
+    position: absolute;
+    width: 216.35px;
+    height: 89.36px;
+    left: 400px;
+    top: 50px;
+    
+    border: 1px solid #F4003B;
+    border-radius: 10px;
+}
+.sub-rec3{
+    box-sizing: border-box;
+
+    position: absolute;
+    width: 216.35px;
+    height: 89.36px;
+    left: 680px;
+    top: 50px;
+    
+    border: 1px solid #F4003B;
+    border-radius: 10px;
+}
+.sub-rec4{
+    box-sizing: border-box;
+
+    position: absolute;
+    width: 216.35px;
+    height: 89.36px;
+    left: 950px;
+    top: 50px;
+    
+    border: 1px solid #F4003B;
+    border-radius: 10px;
+}
+#container {
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #myButton {
+    position: relative;
+    top: 160px;
+    left: 40px;
+    padding: 10px 20px;
+    background-color: red;
+    color: black;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 40px;
+  }
+   */

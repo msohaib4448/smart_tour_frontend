@@ -1,0 +1,73 @@
+.header img {
+    width: 80%;
+    height: 35px;
+  }
+  
+  .header a {
+    color: white;
+    text-align: center;
+    padding: 12px;
+    text-decoration: none;
+    justify-content: end;
+    display: flex;
+    align-items: center;
+  }
+  
+  .header a:hover {
+    color: red;
+  
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    background-color: #303030;
+    padding: 0px 0px;
+  }
+  
+  .headerMain {
+    display: flex;
+   
+  }
+  
+  .button {
+    border: none;
+    background-color: red;
+    color: black;
+    padding: 10px 22px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 14px 50px;
+    cursor: pointer;
+    border-radius: 5px;
+  
+  }
+  .header .form button:hover{
+   color: white;
+  }
+  
+  .logo, .main, .form {
+    display: flex;
+  }
+  
+  
+  
+  @media only screen and (max-width: 600px) {
+    .header {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+  
+  
+  .headerMain {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+  
+  }
+  

@@ -1,0 +1,47 @@
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.heading {
+    text-align: center;
+    color: red;
+    padding: 30px 0;
+    text-transform: uppercase;
+}
+
+.ExplorePageInside {
+    padding: 30px 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.ExploreInsideBox {
+    width: 379px;
+    height: 642px;
+    background-color: black ;
+}
+.TextBoxHeading{
+    color:white
+
+}
+.ExploreButtonCenter {
+    text-align: center;
+    padding: 30px 0;
+}
+
+.ExploreButton {
+    width: 350px;
+    height: 62px;
+    background: #F4003B;
+    border-radius: 50px;
+    font-size: 20px;
+    color: white;
+}
+.imageBoxInside img {
+    width: 100%;
+    height: 550px;
+}
+.reviewalign{
+    text-align: left;
+}
