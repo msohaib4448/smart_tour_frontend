@@ -13,14 +13,16 @@ function ExplorePage() {
       <div className="container">
         <h1 className="heading">Popular Tours</h1>
         <div className="ExplorePageInside">
+
           <div className="ExploreInsideBox">
             <div className="imageBoxInside">
+              
               <img src={hunza} alt="image" />
             </div>
             <div className='TextBoxHeading'>
               <h4>HUNZA</h4>
             </div>
-            
+
             <div className='reviewalign'>⭐⭐⭐⭐⭐</div>
           </div>
 
@@ -44,7 +46,7 @@ function ExplorePage() {
               <h4>KALAM</h4>
             </div>
             <div className='reviewalign'>⭐⭐⭐⭐⭐</div>
-           
+
           </div>
         </div>
 
@@ -57,7 +59,7 @@ function ExplorePage() {
               <h4>BABUSR TOP</h4>
             </div>
             <div className='reviewalign'>⭐⭐⭐⭐⭐</div>
-         
+
           </div>
 
           <div className="ExploreInsideBox">
@@ -68,7 +70,7 @@ function ExplorePage() {
               <h4>KASHMIR</h4>
             </div>
             <div className='reviewalign'>⭐⭐⭐⭐⭐</div>
-          
+
           </div>
           <div className="ExploreInsideBox">
             <div className="imageBoxInside">
@@ -78,7 +80,7 @@ function ExplorePage() {
               <h4>GILGIT</h4>
             </div>
             <div className='reviewalign'>⭐⭐⭐⭐⭐</div>
-       
+
           </div>
         </div>
         <div className="ExploreButtonCenter">

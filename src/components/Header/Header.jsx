@@ -22,6 +22,7 @@ function NavBar() {
 
         <div className="form">
           <Link to="/signin"><button class="button">Sign In</button></Link>
+          <Link to="/register"><button class="button">Register</button></Link>
         </div>
 
 

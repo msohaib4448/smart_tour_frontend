@@ -1,6 +1,9 @@
 .PopularPage {
     background-image: url('../assets/background.jpg');
     background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     height: 80vh;
     background-size: cover;
 }
@@ -17,36 +20,63 @@
 } */
 
 .Sub-Div {
-    position: absolute;
-    width: 400px;
-    height: 150px;
-    left: 650px;
-    top: 300px; 
-    background: #FFFFFF;
-    box-shadow: 5px 2px 20px #000000;
+    border: 2px solid rgb(255, 0, 0);
+    display: flex;
+    background-color: aliceblue;
+    justify-content: center;
+    align-items: center;
+    width: 30%;
+    height: 200px;  
+    box-shadow: 10px 5px 5px rgba(0, 0, 0, 0.82);
     border-radius: 20px;
-    text-align: center;
-    
-    
+
+    /* position: absolute;
+    width: 573px;
+    height: 203px;
+    left: 550px;
+    top: 300px;
+    background: #FFFFFF;
+    box-shadow: 5px 20px 5px rgba(0, 0, 0, 0.82);
+    border-radius: 20px; */
+
 }
-.iconBox{
-  
-    width: 58.60px;
-    height:58.60px;
-   margin-top: 20px;
-   
-  
-    
+
+
+
+.iconBox {
+    border: 2px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    margin-top: 20px;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 10px;
+    box-shadow: 10px 10px 5px 0px rgba(255, 0, 0, 0.25);
 }
-.iconBox2{
-   
-    width: 58.60px;
-    height:58.60px;
-   position: relative;
-   left: 200px;
-   top: -25px;
-    
+.icon{
+    display: flex;
+    justify-content: center;
+    align-items: center
 }
+
+.iconBox2 {
+
+    border: 2px solid red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    margin-top: 20px;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 10px;
+    box-shadow: 10px 10px 5px 0px rgba(255, 0, 0, 0.25);
+}
+
 /* .sub-rec1{
     box-sizing: border-box;
 
