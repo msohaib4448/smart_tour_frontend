@@ -1,0 +1,179 @@
+/* @media only screen and (max-width: 1280px) {
+    .image {
+        opacity: 1;
+        display: block;
+        width: 100%;
+        height: auto;
+        transition: .5s ease;
+        backface-visibility: hidden;
+    }
+
+    .imageBoxInside .hover10-column img {
+        display: flex;
+        width: 30%;
+        height: 200px;
+
+    }
+}
+
+@media only screen and (min-width: 950px) {
+    .image {
+        opacity: 1;
+        display: block;
+        width: 100%;
+        height: auto;
+        transition: .5s ease;
+        backface-visibility: hidden;
+    }
+
+    .imageBoxInside img {
+        display: flex;
+        width: 30%;
+        height: 200px;
+
+    }
+} */
+
+
+.container {
+    width: 100%;
+
+
+
+}
+
+.container1 {
+    position: relative;
+    width: 100%;
+}
+
+/* .container1 {
+    position: relative;
+    width: 50%;
+  } */
+
+.image {
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+}
+
+.middle {
+    /* transition: .5s ease;
+    color: #F4003B;
+    opacity: 1;
+    position: relative;
+    top: -50%; */
+    /* left: 150px; */
+    /* transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+    background-color: black; */
+
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+
+}
+
+.container1:hover .image {
+    opacity: 1;
+}
+
+.container1:hover .middle {
+    opacity: 1;
+}
+
+.text1 {
+    background-color: red;
+    color: white;
+    font-size: 16px;
+    padding: 10px 20px;
+}
+
+
+
+
+
+.heading {
+    text-align: center;
+    color: red;
+    padding: 30px 0;
+    text-transform: uppercase;
+}
+
+.ExplorePageInside {
+    padding: 15px 0;
+    display: flex;
+    justify-content: space-between;
+
+
+}
+
+/* .ExploreInsideBox {
+  
+    background-color: grey   ;
+} */
+.hover10 figure img {
+    -webkit-filter: grayscale(0) blur(0);
+    filter: grayscale(0) blur(0);
+    -webkit-transition: .3s ease-in-out;
+    transition: .3s ease-in-out;
+}
+
+.hover10 figure:hover img {
+    -webkit-filter: grayscale(100%) blur(3px);
+    filter: grayscale(100%) blur(3px);
+}
+
+/* figure{
+    margin: 0;
+} */
+/* img{
+    width: 100%;
+} */
+.text {
+    color: beige;
+    opacity: 2;
+}
+
+
+
+
+
+.TextBoxHeading {
+    color: white
+}
+
+.ExploreButtonCenter {
+    text-align: center;
+    padding: 30px 0;
+}
+
+.ExploreButton {
+    width: 350px;
+    height: 62px;
+    background: #F4003B;
+    border-radius: 50px;
+    font-size: 20px;
+    color: white;
+}
+
+.imageBoxInside img {
+    display: flex;
+    width: 350px;
+    height: 300px;
+
+}
+
+
+.reviewalign {
+    text-align: left;
+}
