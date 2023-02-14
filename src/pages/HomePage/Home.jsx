@@ -4,7 +4,7 @@ import PopularPage from '../../components/PopularPage/PopularPage'
 import ExploreDestination from '../../components/ExploreDestination/ExploreDestination'
 import ExplorePage from '../../components/ExplorePage/ExplorePage'
 import CustomerReview from '../../components/CustomerReviews/CustomerReview'
-import Footer from '../../components/Footer/Footer'
+import Footer from '../../components/footer/Footer'
 export default function Home() {
   return (
     <div>
@@ -13,8 +13,7 @@ export default function Home() {
       <ExplorePage/>
       <ExploreDestination/>
       <CustomerReview/>
-      <Footer/>
-       
+      <Footer/>       
     </div>
   )
 }

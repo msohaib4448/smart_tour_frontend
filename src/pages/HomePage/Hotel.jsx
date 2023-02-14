@@ -1,5 +1,6 @@
 import React from 'react'
 import NavBar from '../../components/Header/Header'
+import HotelMain from '../../components/searchbar/searchBar'
 
 function Hotel() {
   return (
@@ -10,4 +11,3 @@ function Hotel() {
 }
 
 export default Hotel
-

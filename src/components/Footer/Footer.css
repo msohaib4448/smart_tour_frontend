@@ -1,68 +1,37 @@
-/* .Footer {
+.footer {
+  width: 100%;
+  /* width: 1024px; */
+  font-size: 12px;
+  text-align: center;
+}
+
+.fLists {
+  width: 80%;
   display: flex;
   justify-content: space-between;
-}
-
-.container {
-  width: 80%;
+  /* margin-bottom: 50px; */
   margin: 0 auto;
+
+
 }
 
-.footerInside {
-  display: flex;
-  justify-content: space-evenly;
-}
-
-.footerInsideOne h1{
-  font-size: 16px;
-}
-
-.footerInsideOne ul {
+.fList {
   list-style: none;
   padding: 0;
 }
 
-.footerInsideOne ul li {
-  line-height: 3rem;
-
+.fListItem {
+  margin-bottom: 10px;
+  color: #003580;
+  cursor: pointer;
 }
 
-.footerInsideOne ul li a {
-  text-decoration: none;
-  font-size: 16px;
-} */
-footer {
-  background-color: #303030;
-  padding: 20px;
-  display: flex;
-  justify-content: space-between;
-}
-
-.container {
+.fText {
+  
   width: 100%;
-  margin: 0 auto;
-}
-
-.text {
-  text-align: left;
-}
-
-.icons {
+  height: 18px;
   text-align: center;
-}
-
-.payment-methods {
-  text-align: right;
-}
-
-i {
-  font-size: 20px;
-  margin-right: 20px;
-}
-.text{
-  text-align: center;
-  color: white;
-  position:relative;
-  top: 50px;
-
+  background-color: black;
+  color: aliceblue;
+  bottom: 0%;
 }
