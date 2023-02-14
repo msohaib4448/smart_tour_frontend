@@ -1,6 +1,8 @@
 import React, { useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import {useSelector, useDispatch} from 'react-redux';
 import imageIslamabad from '../../assets/Islamabad-hotel.jpeg'
+import Header from '../../components/Header/Header';
+import Footer from '../../components/Footer/Footer'
 import { addToCart, decreaseCart, getTotals } from '../../redux/features/cartSlice'
 import { Link } from "react-router-dom";
 
@@ -11,6 +13,7 @@ function Cart() {
 
   return (
     <div>
+      <Header/>
       {cart.cartItems.length === 0 ? (
         <div className="cart-empty">
           <p>Your cart is currently empty</p>
@@ -59,6 +62,7 @@ function Cart() {
         </div>
       )
       }
+      <Footer/>
     </div>
   );
 }
