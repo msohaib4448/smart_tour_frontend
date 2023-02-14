@@ -13,8 +13,7 @@ export default function Home() {
       <ExplorePage/>
       <ExploreDestination/>
       <CustomerReview/>
-      <Footer/>
-       
+      <Footer/>       
     </div>
   )
 }
