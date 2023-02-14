@@ -7,15 +7,11 @@ import { Link } from "react-router-dom";
 function PopularPage() {
   return (
     <div className="PopularPage">
-      {/* <div className="Main-class">
-       <div className="sub-rec1"></div> 
-       <div className="sub-rec2"></div>
-       <div className="sub-rec3"></div>
-       <div className="sub-rec4"></div> 
-      </div> */}
+     
       <div className="Sub-Div">
 
         <div className="iconBox">
+        
           <div className="icon">
             <Link to="/hotel"> <img src={icon} alt="icon" /></Link>
           </div>

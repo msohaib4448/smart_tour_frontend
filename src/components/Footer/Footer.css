@@ -32,38 +32,37 @@
   font-size: 16px;
 } */
 footer {
-    background-color: #303030;
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-  }
-  
-  .container {
-    width: 80%;
-    margin: 0 auto;
-  }
-  
-  .text {
-    text-align: left;
-  }
-  
-  .icons {
-    text-align: center;
-  }
-  
-  .payment-methods {
-    text-align: right;
-  }
-  
-  i {
-    font-size: 20px;
-    margin-right: 20px;
-  }
-  .text{
-    text-align: center;
-    color: white;
-    position:relative;
-    top: 50px;
-  
-  }
-  
+  background-color: #303030;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.text {
+  text-align: left;
+}
+
+.icons {
+  text-align: center;
+}
+
+.payment-methods {
+  text-align: right;
+}
+
+i {
+  font-size: 20px;
+  margin-right: 20px;
+}
+.text{
+  text-align: center;
+  color: white;
+  position:relative;
+  top: 50px;
+
+}

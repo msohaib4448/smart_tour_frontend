@@ -12,18 +12,18 @@ function CustomerReview() {
         </div>
         <div className="ReviewSection">
           <div className="customerSec">
-            <div className="circle"/>
+            <div className="circle" />
           </div>
           <div className="customerSec">
-            <div className="circle"/>
-            
+            <div className="circle" />
+
           </div>
           <div className="customerSec">
             <div className="circle">
             </div>
           </div>
         </div>
-      
+
         {/* <div className="ReviewSection">
           <div className="customerSec">
             <div className="circle">
