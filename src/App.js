@@ -4,7 +4,6 @@ import React from "react";
 // import ExplorePage from "../src/component/ExplorePage/ExplorePage";
 // import ExploreDestination from "../src/component/ExploreDestination/ExploreDestination";
 // import CustomerReview from '../src/component/CustomerReview/CustomerReview';
-// import Footer from "../src/component/Footer/Footer";
 import AboutUs from './pages/AboutPage/AboutUs'
 import Contact from './pages/Contact/Contact'
 import Blogs from './pages/Blogs/blogs'
