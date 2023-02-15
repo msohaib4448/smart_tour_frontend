@@ -1,7 +1,7 @@
 import "../hotelDetails/hotel.css";
 import Navbar from "../../components/Header/Header";
 import Header from "../../components/searchbar/searchBar";
-import Footer from "../../components/footer/Footer";
+import Footer from "../../components/Footer/Footer";
 import { useLocation } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {

@@ -1,13 +1,16 @@
 import React from 'react'
 import NavBar from '../../components/Header/Header'
-function SignIn() {
+import SignIn from '../../components/SignIn/SignIn'
+
+function Login() {
   return (
   <div>
    <NavBar/>
-    <h1>This is SignIn Page</h1>
+   <SignIn/>
+   
   </div>
    
   )
 }
 
-export default SignIn
+export default Login

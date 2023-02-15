@@ -9,16 +9,20 @@ import AboutUs from './pages/AboutPage/AboutUs'
 import Contact from './pages/Contact/Contact'
 import Blogs from './pages/Blogs/blogs'
 import Home from './pages/HomePage/Home'
-import SignIn from './pages/SignIn/SignIn'
 import Hotel from "./pages/hotelDetails/Hotel"
 import Tour from "./pages/HomePage/Tour";
 // import logo from "./pages/logo";
 import { Routes, Route } from "react-router-dom";
-import Regsiter from "./pages/Register/Regsiter";
 import List from "./pages/hotelList/List";
 import Searchbar from "./pages/hotelHomePage/searchbar";
+import Register from "./pages/Register/Register";
+import Login from "./pages/SignIn/SignIn";
+import Cookies
+ from "js-cookie";
+import SignIn from "./components/SignIn/SignIn";
 
 function App() {
+  const token= Cookies.get('token')
   return (
 
     <div className="App">
@@ -27,12 +31,15 @@ function App() {
         <Route path="/about" element={<AboutUs />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/blogs" element={<Blogs />} />
-        <Route path="/signin" element={<SignIn />} />
+        <Route path="/signin" element={<Login />} />
         <Route path="/tour" element={<Tour />} />
-        <Route path="/register" element={<Regsiter />} />
+        <Route path="/register" element={<Register />} />
         <Route path="/hotel" element={<Searchbar />} />
-        <Route path="/hotels" element={<List />} />
+        <Route path="/hotels" element={token? <List />: <Login/>} />
         <Route path="/hotels/:id" element={<Hotel />} />
+        <Route path="/" element={<SignIn />} />
+        <Route path="/register" element={<SignIn />} />
+        
 
       </Routes>
     </div>
