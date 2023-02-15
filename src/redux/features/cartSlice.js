@@ -8,7 +8,8 @@ const initialState = {
     cartTotalQuantity: 0,
     cartTotalAmount: 0,
     cartNoOfDays: 0,
-    price: 0
+    price: 0,
+    dates: []
 };
 
 const cartSlice = createSlice({
@@ -36,8 +37,9 @@ const cartSlice = createSlice({
             //         position: "bottom-left",
             //     });
             // }
+            // state.cartItems.push(action.payload)
             localStorage.setItem("cartItems", JSON.stringify(action.payload.hotelData));
-            // state.cartItems.push(action.payload.hotelData)
+            state.dates = action.payload.dates
             state.cartTotalQuantity = action.payload.noOfRooms
             state.cartNoOfDays = action.payload.days
             state.cartTotalAmount = action.payload.days * action.payload.hotelData.price * action.payload.noOfRooms
@@ -95,8 +97,12 @@ const cartSlice = createSlice({
 
         },
         decreaseCart(state, action) {
-            // state.cartTotalQuantity -= 1;
-            // state.cartTotalAmount = state.cartTotalQuantity * state.cartNoOfDays * state.price
+            state.cartTotalQuantity -= 1;
+            if (state.cartTotalQuantity == 0) {
+                localStorage.clear("cartItems")
+                return;
+            }
+            state.cartTotalAmount = state.cartTotalQuantity * state.cartNoOfDays * state.price
             
         },
     },

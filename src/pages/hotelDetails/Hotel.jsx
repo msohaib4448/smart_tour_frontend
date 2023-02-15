@@ -59,12 +59,12 @@ const Hotel = () => {
     setSlideNumber(newSlideNumber)
   };
 
-  function handleReserveBooking () {
+  function handleReserveBooking() {
     // setHotelData(prevObj => ({
     //   ...prevObj,
     //   noOfRooms: noOfRooms
     // }));
-    const data = {hotelData, noOfRooms, days}
+    const data = { hotelData, noOfRooms, days, dates }
     console.log("console before: ", data)
     console.log("Button Click");
     dispatch(addToCart(data))
@@ -122,10 +122,10 @@ const Hotel = () => {
             </div>
             <div className="hotelDetailsPrice">
               <h2>
-              <b>PKR {days * hotelData.price * noOfRooms}</b> <br></br>{days}{" "}
-                  night(s) & {noOfRooms} room(s)
+                <b>PKR {days * hotelData.price * noOfRooms}</b> <br></br>{days}{" "}
+                night(s) & {noOfRooms} room(s)
               </h2>
-              <button onClick={() => {handleReserveBooking()}}>Reserve or Book Now!</button>
+              <button onClick={() => { handleReserveBooking() }}>Reserve or Book Now!</button>
             </div>
           </div>
         </div>
