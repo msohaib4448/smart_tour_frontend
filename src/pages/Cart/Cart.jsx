@@ -1,19 +1,38 @@
 import React, { useState } from "react";
-import {useSelector, useDispatch} from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import imageIslamabad from '../../assets/Islamabad-hotel.jpeg'
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer'
-import { addToCart, decreaseCart, getTotals } from '../../redux/features/cartSlice'
+import { useNavigate } from "react-router-dom";
+import { decreaseCart,  emptyCart , increaseCart} from '../../redux/features/cartSlice'
 import { Link } from "react-router-dom";
+import axios from "axios";
+import './Cart.css';
 
 function Cart() {
   const cart = useSelector((state) => state.cart)
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const [quantity, setQuantity] = useState(1);
-
+  const handleCheckout = async () => {
+    try {
+      const res = await axios.post('http://localhost:3002/api/stripe/checkoutsession',
+        {
+          user_id: 1,
+          items: cart.cartItems,
+        }
+      );
+      dispatch(emptyCart());
+      window.location.href=res.data.url;
+    }
+    catch (error) {
+      console.error(error);
+      navigate("/paymet-failed")
+    }
+  }
   return (
     <div>
-      <Header/>
+      <Header />
       {cart.cartItems.length === 0 ? (
         <div className="cart-empty">
           <p>Your cart is currently empty</p>
@@ -38,11 +57,11 @@ function Cart() {
         </div>
       ) : (
         <div style={styles.container}>
-          <img src={imageIslamabad} style={styles.image} alt={"slamabad Hotel"} />
-          <h3 style={styles.name}>{cart.cartItems[0]}</h3>
+          <img src={imageIslamabad} style={styles.image} alt={"hotel image"} />
+          <h3 style={styles.name}>{cart.cartItems[0].name}</h3>
           <div style={styles.details}>
 
-            <p style={styles.price}>Price: ${cart.cartTotalAmount}</p>
+            <p style={styles.price}>Price: PKR {cart.cartTotalAmount}</p>
             <div style={styles.quantityContainer}>
               <button
                 onClick={() => { dispatch(decreaseCart()) }}
@@ -52,17 +71,20 @@ function Cart() {
               </button>
               <p style={styles.quantity}>{cart.cartTotalQuantity}</p>
               <button
-                onClick={() => setQuantity(quantity + 1)}
+                onClick={() => {dispatch(increaseCart())}}
                 style={styles.quantityButton}
               >
                 +
               </button>
             </div>
+            <div className="CartButton">
+              <button onClick={handleCheckout}>Checkout</button>
+            </div>
           </div>
         </div>
       )
       }
-      <Footer/>
+      <Footer />
     </div>
   );
 }

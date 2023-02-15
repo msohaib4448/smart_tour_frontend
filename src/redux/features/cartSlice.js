@@ -7,6 +7,8 @@ const initialState = {
         : [],
     cartTotalQuantity: 0,
     cartTotalAmount: 0,
+    cartNoOfDays: 0,
+    price: 0
 };
 
 const cartSlice = createSlice({
@@ -14,52 +16,34 @@ const cartSlice = createSlice({
     initialState,
     reducers: {
         addToCart(state, action) {
-            const existingIndex = state.cartItems.findIndex(
-                (item) => item.id === action.payload.id
-            );
+            console.log("cart: ", action.payload)
+            // const existingIndex = state.cartItems.findIndex(
+            //     (item) => item.id === action.payload.id
+            // );
 
-            if (existingIndex >= 0) {
-                state.cartItems[existingIndex] = {
-                    ...state.cartItems[existingIndex],
-                    cartQuantity: state.cartItems[existingIndex].cartQuantity + 1,
-                };
-                toast.info("Increased product quantity", {
-                    position: "bottom-left",
-                });
-            } else {
-                let tempProductItem = { ...action.payload, cartQuantity: 1 };
-                state.cartItems.push(tempProductItem);
-                toast.success("Product added to cart", {
-                    position: "bottom-left",
-                });
-            }
-            localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
+            // if (existingIndex >= 0) {
+            //     state.cartItems[existingIndex] = {
+            //         ...state.cartItems[existingIndex],
+            //         cartQuantity: state.cartItems[existingIndex].cartQuantity + 1,
+            //     };
+            //     toast.info("Increased product quantity", {
+            //         position: "bottom-left",
+            //     });
+            // } else {
+            //     let tempProductItem = { ...action.payload, cartQuantity: 1 };
+            //     state.cartItems.push(tempProductItem);
+            //     toast.success("Product added to cart", {
+            //         position: "bottom-left",
+            //     });
+            // }
+            localStorage.setItem("cartItems", JSON.stringify(action.payload.hotelData));
+            state.cartItems.push(action.payload.hotelData)
+            state.cartTotalQuantity = action.payload.noOfRooms
+            state.cartNoOfDays = action.payload.days
+            state.cartTotalAmount = action.payload.days * action.payload.hotelData.price * action.payload.noOfRooms
+            state.price = action.payload.hotelData.price;
         },
-        decreaseCart(state, action) {
-            const itemIndex = state.cartItems.findIndex(
-                (item) => item.id === action.payload.id
-            );
 
-            if (state.cartItems[itemIndex].cartQuantity > 1) {
-                state.cartItems[itemIndex].cartQuantity -= 1;
-
-                toast.info("Decreased product quantity", {
-                    position: "bottom-left",
-                });
-            } else if (state.cartItems[itemIndex].cartQuantity === 1) {
-                const nextCartItems = state.cartItems.filter(
-                    (item) => item.id !== action.payload.id
-                );
-
-                state.cartItems = nextCartItems;
-
-                toast.error("Product removed from cart", {
-                    position: "bottom-left",
-                });
-            }
-
-            localStorage.setItem("cartItems", JSON.stringify(state.cartItems));
-        },
         removeFromCart(state, action) {
             state.cartItems.map((cartItem) => {
                 if (cartItem.id === action.payload.id) {
@@ -78,29 +62,48 @@ const cartSlice = createSlice({
             });
         },
         getTotals(state, action) {
-            let { total, quantity } = state.cartItems.reduce(
-                (cartTotal, cartItem) => {
-                    const { price, cartQuantity } = cartItem;
-                    const itemTotal = price * cartQuantity;
+            // let { total, quantity } = state.cartItems.reduce(
+            //     (cartTotal, cartItem) => {
+            //         const { price, cartQuantity } = cartItem;
+            //         const itemTotal = price * cartQuantity;
 
-                    cartTotal.total += itemTotal;
-                    cartTotal.quantity += cartQuantity;
+            //         cartTotal.total += itemTotal;
+            //         cartTotal.quantity += cartQuantity;
 
-                    return cartTotal;
-                },
-                {
-                    total: 0,
-                    quantity: 0,
-                }
-            );
-            total = parseFloat(total.toFixed(2));
-            state.cartTotalQuantity = quantity;
-            state.cartTotalAmount = total;
-        }
+            //         return cartTotal;
+            //     },
+            //     {
+            //         total: 0,
+            //         quantity: 0,
+            //     }
+            // );
+            // total = parseFloat(total.toFixed(2));
+            // state.cartTotalQuantity = quantity;
+            // state.cartTotalAmount = total;
+        },
+        emptyCart: (state, action) => {
+            localStorage.clear("cart");
+            state.cartItems = [];
+            state.cartTotalAmount = 0;
+            state.cartTotalQuantity = 0;
+        },
+        increaseCart: (state, action) => {
+            // let pricePerRoom = state.cartTotalAmount / state.cartTotalQuantity
+            console.log("price/room: ", state.price);
+            state.cartTotalQuantity += 1;
+            state.cartTotalAmount = state.cartTotalQuantity * state.cartNoOfDays * state.price
+
+        },
+        decreaseCart(state, action) {
+            // state.cartTotalQuantity -= 1;
+            // state.cartTotalAmount = state.cartTotalQuantity * state.cartNoOfDays * state.price
+            
+        },
     },
+
 });
 
-export const { addToCart, decreaseCart, removeFromCart, getTotals } =
+export const { addToCart, decreaseCart, increaseCart, removeFromCart, getTotals, emptyCart } =
     cartSlice.actions;
 
 export default cartSlice.reducer;
