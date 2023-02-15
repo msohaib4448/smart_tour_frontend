@@ -1,76 +1,17 @@
-/* @media only screen and (max-width: 1280px) {
-    .image {
-        opacity: 1;
-        display: block;
-        width: 100%;
-        height: auto;
-        transition: .5s ease;
-        backface-visibility: hidden;
-    }
-
-    .imageBoxInside .hover10-column img {
-        display: flex;
-        width: 30%;
-        height: 200px;
-
-    }
+body{
+    overflow-x: hidden;
 }
-
-@media only screen and (min-width: 950px) {
-    .image {
-        opacity: 1;
-        display: block;
-        width: 100%;
-        height: auto;
-        transition: .5s ease;
-        backface-visibility: hidden;
-    }
-
-    .imageBoxInside img {
-        display: flex;
-        width: 30%;
-        height: 200px;
-
-    }
-} */
-
-
-.container {
-    width: 100%;
-
-
-
-}
-
-.container1 {
-    position: relative;
-    width: 100%;
-}
-
-/* .container1 {
-    position: relative;
-    width: 50%;
-  } */
 
 .image {
     display: block;
-    width: 100%;
     height: auto;
     transition: .5s ease;
     backface-visibility: hidden;
+
 }
 
-.middle {
-    /* transition: .5s ease;
-    color: #F4003B;
-    opacity: 1;
-    position: relative;
-    top: -50%; */
-    /* left: 150px; */
-    /* transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    text-align: center;
-    background-color: black; */
+ .middle {
+ 
 
     transition: .5s ease;
     opacity: 0;
@@ -81,22 +22,22 @@
     -ms-transform: translate(-50%, -50%);
     text-align: center;
 
-}
-
-.container1:hover .image {
+} 
+ .container1:hover .image {
     opacity: 1;
 }
 
 .container1:hover .middle {
     opacity: 1;
-}
+} 
 
 .text1 {
-    background-color: red;
-    color: white;
-    font-size: 16px;
-    padding: 10px 20px;
+  background-color: #04AA6D;
+  color: white;
+  font-size: 16px;
+  padding: 50px 32px;
 }
+
 
 
 
@@ -112,15 +53,75 @@
 .ExplorePageInside {
     padding: 15px 0;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
 
 
+
+} 
+
+
+
+.container {
+    width: 100%;
+
 }
 
-/* .ExploreInsideBox {
+.container1 {
+    position: relative;
   
-    background-color: grey   ;
-} */
+}
+ 
+
+
+.image {
+    display: block;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+}
+
+ .middle {
+ 
+
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+
+} 
+ .container1:hover .image {
+    opacity: 1;
+}
+
+.container1:hover .middle {
+    opacity: 1;
+} 
+
+.text1 {
+  background-color: red;
+  color: white;
+  font-size: 16px;
+  padding: 50px 32px;
+}
+
+
+
+
+
+
+.heading {
+    text-align: center;
+    color: red;
+    padding: 30px 0;
+    text-transform: uppercase;
+}
+
+
 .hover10 figure img {
     -webkit-filter: grayscale(0) blur(0);
     filter: grayscale(0) blur(0);
@@ -133,12 +134,7 @@
     filter: grayscale(100%) blur(3px);
 }
 
-/* figure{
-    margin: 0;
-} */
-/* img{
-    width: 100%;
-} */
+    
 .text {
     color: beige;
     opacity: 2;
@@ -152,28 +148,14 @@
     color: white
 }
 
-.ExploreButtonCenter {
-    text-align: center;
-    padding: 30px 0;
-}
 
-.ExploreButton {
-    width: 350px;
-    height: 62px;
-    background: #F4003B;
-    border-radius: 50px;
-    font-size: 20px;
-    color: white;
-}
 
 .imageBoxInside img {
     display: flex;
+    flex-wrap: wrap;
     width: 350px;
     height: 300px;
 
 }
 
 
-.reviewalign {
-    text-align: left;
-}

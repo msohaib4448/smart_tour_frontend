@@ -20,16 +20,13 @@
 
 .header {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   flex-direction: row;
-  background-color: #303030;
+  background-color: #fff;
   padding: 0px 0px;
 }
 
-.headerMain {
-  display: flex;
- 
-}
+
 .form{
   display: flex;
   justify-content: center;
