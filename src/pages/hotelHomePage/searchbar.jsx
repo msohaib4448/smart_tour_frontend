@@ -1,4 +1,4 @@
-import Footer from "../../components/footer/Footer";
+import Footer from "../../components/Footer/footer";
 import Header from "../../components/searchbar/searchBar";
 import Navbar from "../../components/Header/Header";
 import "../hotelHomePage/home.css"
