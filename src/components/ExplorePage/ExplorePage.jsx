@@ -9,7 +9,7 @@ const [data,setData]=useState([])
 
 
   const fetchData = async () => {
-    const response = await fetch('http://localhost:5000/api/tour/showpackage');
+    const response = await fetch('http://localhost:3002/api/tour/showpackage');
     const data = await response.json();
     console.log(data)
     setData(data)

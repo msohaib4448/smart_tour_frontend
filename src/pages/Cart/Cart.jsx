@@ -4,26 +4,33 @@ import imageIslamabad from '../../assets/Islamabad-hotel.jpeg'
 import Header from '../../components/Header/Header';
 import Footer from '../../components/Footer/Footer'
 import { useNavigate } from "react-router-dom";
-import { decreaseCart,  emptyCart , increaseCart} from '../../redux/features/cartSlice'
+import { decreaseCart, emptyCart, increaseCart } from '../../redux/features/cartSlice'
 import { Link } from "react-router-dom";
 import axios from "axios";
 import './Cart.css';
 
 function Cart() {
   const cart = useSelector((state) => state.cart)
+  console.log("cart console: ", cart)
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const [quantity, setQuantity] = useState(1);
   const handleCheckout = async () => {
+    console.log(cart.cartItems.name)
     try {
       const res = await axios.post('http://localhost:3002/api/stripe/checkoutsession',
         {
-          user_id: 1,
-          items: cart.cartItems,
+          customer_id: 1,
+          order_total: cart.cartTotalAmount,
+          booking_from: cart.dates[0].startDate,
+          booking_to: cart.dates[0].endDate,
+          rooms_booked: cart.cartTotalQuantity,
+          hotel_id: cart.cartItems.hotel_id,
+          name: cart.cartItems.name,
         }
       );
-      dispatch(emptyCart());
-      window.location.href=res.data.url;
+      window.location.href = res.data.url;
+      // dispatch(emptyCart());
     }
     catch (error) {
       console.error(error);
@@ -33,7 +40,7 @@ function Cart() {
   return (
     <div>
       <Header />
-      {cart.cartItems.length === 0 ? (
+      {localStorage.length === 0 ? (
         <div className="cart-empty">
           <p>Your cart is currently empty</p>
           <div className="start-shopping">
@@ -58,7 +65,7 @@ function Cart() {
       ) : (
         <div style={styles.container}>
           <img src={imageIslamabad} style={styles.image} alt={"hotel image"} />
-          <h3 style={styles.name}>{cart.cartItems[0].name}</h3>
+          <h3 style={styles.name}>{cart.cartItems.name}</h3>
           <div style={styles.details}>
 
             <p style={styles.price}>Price: PKR {cart.cartTotalAmount}</p>
@@ -71,7 +78,7 @@ function Cart() {
               </button>
               <p style={styles.quantity}>{cart.cartTotalQuantity}</p>
               <button
-                onClick={() => {dispatch(increaseCart())}}
+                onClick={() => { dispatch(increaseCart()) }}
                 style={styles.quantityButton}
               >
                 +
