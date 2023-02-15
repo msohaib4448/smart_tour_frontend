@@ -1,8 +1,24 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import logo from '../../components/assets/1.png'
 import "./Header.css";
 import { Link } from 'react-router-dom';
+import Cookies from 'js-cookie';
 function NavBar() {
+  const [ token ,setToken]=useState()
+  const tokenRemove=()=>{
+    Cookies.remove('token')
+    setToken(false)
+  }
+  useEffect(()=>{
+
+  const gettoken =Cookies.get('token')
+  setToken(gettoken)
+
+  
+    
+
+  },[])
+
   return (
     <>
       <div className="header">
@@ -18,10 +34,11 @@ function NavBar() {
         </div>
 
         <div className="form">
-          <Link to="/signin"><button class="button">Sign In</button></Link>
-          <Link to="/register"><button class="button">Register</button></Link>
-        </div>
-
+          {!token ?  <><Link to="/signin"><button class="button">Sign In</button></Link>
+          <Link to="/register"><button class="button">Register</button></Link></>
+        :<Link to="/"><button onClick={tokenRemove} class="button">logout</button></Link> }
+         </div>
+        
 
       </div>
       {/* <div class="container">

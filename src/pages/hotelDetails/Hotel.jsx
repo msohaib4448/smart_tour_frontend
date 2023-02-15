@@ -2,6 +2,7 @@ import "../hotelDetails/hotel.css";
 import Navbar from "../../components/Header/Header";
 import Header from "../../components/searchbar/searchBar";
 import Footer from "../../components/Footer/Footer";
+
 import { useDispatch, useSelector } from "react-redux";
 import { useLocation, useNavigate } from "react-router-dom";
 import { addToCart } from "../../redux/features/cartSlice";
