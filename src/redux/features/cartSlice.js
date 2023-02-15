@@ -37,7 +37,7 @@ const cartSlice = createSlice({
             //     });
             // }
             localStorage.setItem("cartItems", JSON.stringify(action.payload.hotelData));
-            state.cartItems.push(action.payload.hotelData)
+            // state.cartItems.push(action.payload.hotelData)
             state.cartTotalQuantity = action.payload.noOfRooms
             state.cartNoOfDays = action.payload.days
             state.cartTotalAmount = action.payload.days * action.payload.hotelData.price * action.payload.noOfRooms

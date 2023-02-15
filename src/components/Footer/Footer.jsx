@@ -1,4 +1,6 @@
+
 import "./Footer.css";
+
 
 const Footer = () => {
   return (
@@ -38,7 +40,7 @@ const Footer = () => {
           <li className="fListItem">Curtomer Service</li>
           <li className="fListItem">Partner Help</li>
           <li className="fListItem">Careers</li>
-          <li className="fListItem">Sustainability</li>
+          <li className="fListItem">Payment Method</li>
           <li className="fListItem">Press center</li>
           <li className="fListItem">Safety Resource Center</li>
           <li className="fListItem">Investor relations</li>

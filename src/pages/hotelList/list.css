@@ -5,8 +5,7 @@
 }
 
 .listWrapper {
-  width: 100%;
-  max-width: 1024px;
+  width: 80%;
   display: flex;
   gap: 20px;
 }
