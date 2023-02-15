@@ -11,11 +11,15 @@ import Home from './pages/HomePage/Home'
 import SignIn from './pages/SignIn/SignIn'
 import Hotel from "./pages/hotelDetails/Hotel"
 import Tour from "./pages/HomePage/Tour";
+import Cart from './pages/Cart/Cart';
+import PaymentSuccess from "./pages/PaymentSuccess/PaymentSuccess";
+import PaymentCancel from "./pages/PaymentCancel/PaymentCancel";
 // import logo from "./pages/logo";
 import { Routes, Route } from "react-router-dom";
 import Regsiter from "./pages/Register/Regsiter";
 import List from "./pages/hotelList/List";
 import Searchbar from "./pages/hotelHomePage/searchbar";
+import PaymentFailed from "./pages/PaymentFailed/PaymentFailed";
 
 function App() {
   return (
@@ -32,6 +36,10 @@ function App() {
         <Route path="/hotel" element={<Searchbar />} />
         <Route path="/hotels" element={<List />} />
         <Route path="/hotels/:id" element={<Hotel />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/payment-failed" element={<PaymentFailed/>}/>
+        <Route path="/success" element={<PaymentSuccess />} />
+        <Route path="/cancel" element={<PaymentCancel />} />
 
       </Routes>
     </div>

@@ -4,7 +4,9 @@ import PopularPage from '../../components/PopularPage/PopularPage'
 import ExploreDestination from '../../components/ExploreDestination/ExploreDestination'
 import ExplorePage from '../../components/ExplorePage/ExplorePage'
 import CustomerReview from '../../components/CustomerReviews/CustomerReview'
-import Footer from '../../components/Footer/footer'
+
+import Footer from '../../components/Footer/Footer'
+
 export default function Home() {
   return (
     <div>

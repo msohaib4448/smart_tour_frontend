@@ -11,7 +11,9 @@ import "react-date-range/dist/styles.css"; // main css file
 import "react-date-range/dist/theme/default.css"; // theme css file
 import { format } from "date-fns";
 import { useNavigate } from "react-router-dom";
-import Footer from '../Footer/footer'
+
+import Footer from '../../components/Footer/Footer'
+
 
 const HotelMain = ({ type }) => {
   const [destination, setDestination] = useState("");
@@ -37,7 +39,7 @@ const HotelMain = ({ type }) => {
   useEffect(()=>{
     const fetchHotelsData = async()=>{
       try {
-       const response = await axios.get("http://localhost:5000/hotel/showhotels");
+       const response = await axios.get("http://localhost:3002/hotel/showhotels");
        console.log(response.data);
        const tempData = response.data;
        sethotelsData(tempData);    
