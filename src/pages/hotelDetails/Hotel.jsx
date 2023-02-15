@@ -2,7 +2,10 @@ import "../hotelDetails/hotel.css";
 import Navbar from "../../components/Header/Header";
 import Header from "../../components/searchbar/searchBar";
 import Footer from "../../components/Footer/Footer";
-import { useLocation } from "react-router-dom";
+
+import { useDispatch, useSelector } from "react-redux";
+import { useLocation, useNavigate } from "react-router-dom";
+import { addToCart } from "../../redux/features/cartSlice";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCircleArrowLeft,
@@ -11,15 +14,21 @@ import {
   faLocationDot,
 } from "@fortawesome/free-solid-svg-icons";
 import { useState } from "react";
+import { set } from "date-fns";
 
 const Hotel = () => {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const location = useLocation();
   const [slideNumber, setSlideNumber] = useState(0);
   const [open, setOpen] = useState(false);
   const [hotelData, setHotelData] = useState(location.state.props);
   const [noOfRooms, setNoOfRooms] = useState(location.state.noOfRooms);
   const [dates, setDates] = useState(location.state.bookingDates);
-  
+  // setHotelData(prevObj => ({
+  //   ...prevObj,
+  //   noOfRooms: noOfRooms
+  // }));
   console.log("hotelDetail", hotelData);
   console.log("number: ", noOfRooms);
   console.log("date: ", dates);
@@ -52,7 +61,15 @@ const Hotel = () => {
   };
 
   function handleReserveBooking () {
+    // setHotelData(prevObj => ({
+    //   ...prevObj,
+    //   noOfRooms: noOfRooms
+    // }));
+    const data = {hotelData, noOfRooms, days}
+    console.log("console before: ", data)
     console.log("Button Click");
+    dispatch(addToCart(data))
+    navigate("/cart");
   }
 
   return (
@@ -73,7 +90,7 @@ const Hotel = () => {
               onClick={() => handleMove("l")}
             />
             <div className="sliderWrapper">
-              <img src={hotelData.room_image[slideNumber]} alt="" className="sliderImg" />
+              <img src={hotelData.room_images[slideNumber]} alt="" className="sliderImg" />
             </div>
             <FontAwesomeIcon
               icon={faCircleArrowRight}
@@ -89,7 +106,7 @@ const Hotel = () => {
             <span>{hotelData.location}</span>
           </div>
           <div className="hotelImages">
-            {hotelData.room_image.map((photo, i) => (
+            {hotelData.room_images.map((photo, i) => (
               <div className="hotelImgWrapper" key={i}>
                 <img
                   onClick={() => handleOpen(i)}
@@ -102,7 +119,7 @@ const Hotel = () => {
           </div>
           <div className="hotelDetails">
             <div className="hotelDetailsTexts">
-              <h1 className="hotelTitle">{hotelData.room_description}</h1>
+              <p className="hotelTitle">{hotelData.room_description}</p>
             </div>
             <div className="hotelDetailsPrice">
               <h2>

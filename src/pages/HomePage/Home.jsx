@@ -7,6 +7,7 @@ import CustomerReview from '../../components/CustomerReviews/CustomerReview'
 import Footer from '../../components/Footer/Footer'
 import Signup from '../../components/signup/SignUp'
 import SignIn from '../../components/SignIn/SignIn'
+
 export default function Home() {
   return (
     <div>
