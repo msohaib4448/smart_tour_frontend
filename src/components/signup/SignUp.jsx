@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import logo from '../assets/logo.jpg'
 import './style.css'
 function Signup() {
@@ -10,6 +10,8 @@ function Signup() {
         password: ''
     });
     const [user, setUser]=useState(false)
+    const navigate = useNavigate()
+
 
     const handleChange = event => {
         setFormData({
@@ -22,7 +24,7 @@ function Signup() {
         event.preventDefault();
         console.log("sdcfsdjkxh");
         try {
-            const response = await fetch('http://localhost:5000/api/user/signup', {
+            const response = await fetch('http://localhost:3002/api/user/signup', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -32,7 +34,9 @@ function Signup() {
             const result = await response.json();
             console.log("result",result);
             setUser(true)
-            // alert("SignUp successfully!");
+            alert("SignUp successfully!");
+            navigate('/signin');
+
         } catch (error) {
             console.error(error);
         }

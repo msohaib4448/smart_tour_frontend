@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 // import Header from "../src/component/Header/Header";
 // import PopularPage from "../src/component/PopularPage/PopularPage";
 // import ExplorePage from "../src/component/ExplorePage/ExplorePage";
@@ -27,7 +27,8 @@ import PaymentFailed from "./pages/PaymentFailed/PaymentFailed";
 
 
 function App() {
-  const token= Cookies.get('token')
+  const [token ,setToken]=useState(Cookies.get('token'))
+  // const token= Cookies.get('token')
   return (
 
     <div className="App">
@@ -40,7 +41,7 @@ function App() {
         <Route path="/tour" element={<Tour />} />
         <Route path="/register" element={<Register />} />
         <Route path="/hotel" element={<Searchbar />} />
-        <Route path="/hotels" element={token? <List />: <Login/>} />
+        <Route path="/hotels" element={ <List /> } />
         <Route path="/hotels/:id" element={<Hotel />} />
 
         <Route path="/" element={<SignIn />} />

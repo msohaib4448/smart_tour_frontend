@@ -81,7 +81,7 @@ const List = () => {
           </div>
         </div>
       </div>
-      <Footer/>
+      {/* <Footer/> */}
     </div>
   );
 };

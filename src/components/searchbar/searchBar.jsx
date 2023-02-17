@@ -160,7 +160,7 @@ const HotelMain = ({ type }) => {
           </>
         )}
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };
